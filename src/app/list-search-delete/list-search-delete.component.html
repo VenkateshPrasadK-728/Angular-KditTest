@@ -1,0 +1,42 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+<div class="container">
+    <div class="row col-md-12 col-md-offset-2 custyle">
+        <div id="custom-search-input" class="input-group col-md-12" style="text-align: center;width: 600px;margin-left: 0px">
+                <input type="text" class="search-query form-control" placeholder="Search here.."  name="usersearch"  [(ngModel)]="model.user" />
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button" (click)="getUsersbyId()">
+                        <span class=" glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+        </div>
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Event</th>
+            <th>Date</th>
+            <th>Reg No</th>
+            <th>Phone No</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let model of Model">
+            <td>{{model.user}}</td>
+            <td>{{model.event}}</td>
+            <td>{{model.date}}</td>
+            <td>{{model.regno}}</td>
+            <td>{{model.phoneno}}</td>
+            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delete(model.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            <td class="text-center"><button class="btn btn-danger btn-xs" (click)="update(model.id)"><span class="glyphicon glyphicon-remove"></span> Update</button></td>
+          </tr>
+    </tbody>
+    </table>
+    </div>
+</div>
+
+

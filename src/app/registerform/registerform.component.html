@@ -1,0 +1,47 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+    <div class="row">
+        <h2 style="text-align: center;color: blue;">Register</h2>
+            <form>
+                <fieldset> 
+                    <div class="form-group">
+                        <label for="user"><span class="req">* </span> User Name: </label>
+                        <input required type="text" name="user" id="user" [(ngModel)]="model.user"
+                            class="form-control user" maxlength="28" placeholder="Enter your name..." />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventname"><span class="req">* </span> Event Name: </label>
+                        <input class="form-control" type="text"  name="event" id="event" [(ngModel)]="model.event" required
+                            placeholder="Enter event name..." />
+                        <div id="errEvent"></div>
+                    </div>
+
+                    <div class="form-group" style="width:100%;display: flex;">
+                        <div class="date-span" style="width:50%;float: left;">
+                        <label for="date"><span class="req">* </span> Event Date : </label>
+                        <input class="form-control" type="date"  name="date" id="date" [(ngModel)]="model.date" required />
+                        </div>
+                        <div class="regno-span" style="width:50%">
+                        <label for="regno"><span class="req">* </span> Reg No : </label>
+                        <input class="form-control" type="number"  name="regno" id="regno" [(ngModel)]="model.regno" required placeholder="regno.." />
+                        </div>  
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneno"><span class="req">* </span> PhoneNo: </label>
+                        <input class="form-control" required type="number" 
+                            id="phoneno" [(ngModel)]="model.phoneno" placeholder="phone.." />
+                        <div class="phoneno" id="phoneno"></div>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerNow()" >
+                    </div>
+                </fieldset>
+            </form>
+    </div>
+</div>
+
